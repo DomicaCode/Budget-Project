@@ -48,6 +48,16 @@ namespace Project_Budget.Engine
 
             }
         }
-        
+
+        public void addShop(string sop_name, int item_id, int trg_id, int item_quantity, string payment_type, string date)
+        {
+            using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
+            {
+                List<Shopping> shoppings = new List<Shopping>();
+                shoppings.Add(new Shopping { sop_name = sop_name, itm_id = item_id, trg_id = trg_id, item_quantity = item_quantity, payment_type = payment_type, datum = date });
+                connection.Execute("SopingInsert", shoppings, 
+                    commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

@@ -24,16 +24,22 @@ namespace Project_Budget
         Items items = new Items();
         Trgovina stores = new Trgovina();
         DataAccess da = new DataAccess();
+        public string date;
 
         public MainWindow()
         {
             InitializeComponent();
 
+            // popuni combobox za trgovine
             List<Trgovina> stores = new List<Trgovina>();
             stores = da.getAllStores();
             comboxStoreNames.ItemsSource = stores;
             comboxStoreNames.DisplayMemberPath = "ime_trg";
             comboxStoreNames.SelectedValuePath = "id";
+
+            // popuni combobox za payment type
+            comboxShoppingPaymentType.Items.Add("Cash");
+            comboxShoppingPaymentType.Items.Add("Card");
         }
 
         private void btnItems_Click(object sender, RoutedEventArgs e)
@@ -48,8 +54,34 @@ namespace Project_Budget
             items = da.getItems(txtboxItemNameSearch.Text.Trim());
 
             this.datagridItems.ItemsSource = items;
+            this.datagridItems.SelectedValuePath = "itm_id";
 
             txtboxItemNameSearch.Text = "";
+        }
+
+        private void btnShoppingAdd_Click(object sender, RoutedEventArgs e)
+        {
+            checkDate();
+            da.addShop(txtboxShoppingName.Text.Trim(),
+                (int)datagridItems.SelectedValue, (int)comboxStoreNames.SelectedValue,
+                Convert.ToInt32(txtboxShoppingQuantity.Text.Trim()), comboxShoppingPaymentType.SelectedItem.ToString(), date);
+
+            txtboxShoppingQuantity.Text = "";
+
+            MessageBox.Show("Shopping uspjesno dodan!");
+        }
+
+        public void checkDate()
+        {
+            DateTime? selectedDate = datePickerShopping.SelectedDate;
+            if (selectedDate.HasValue)
+            {
+                date = selectedDate.Value.ToString("yyyy.MM.dd", System.Globalization.CultureInfo.InvariantCulture);
+            }
+            else
+            {
+
+            }
         }
     }
 }

@@ -36,6 +36,9 @@ namespace Project_Budget
 
             txtboxItemName.Text = "";
             txtboxItemPrice.Text = "";
+            txtboxItemDesc.Text = "";
+
+            MessageBox.Show("Item uspjesno dodan!");
         }
 
     }

@@ -12,7 +12,7 @@
         <Label x:Name="lblitemName" Content="Ime produkta" HorizontalAlignment="Left" Margin="57,31,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtboxItemPrice" HorizontalAlignment="Left" Height="23" Margin="57,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblitemPrice" Content="Cijena produkta" HorizontalAlignment="Left" Margin="57,80,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtboxItemDesc" HorizontalAlignment="Left" Height="23" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224"/>
+        <TextBox x:Name="txtboxItemDesc" HorizontalAlignment="Left" Height="23" Margin="20,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
         <Label x:Name="lblitemDesc" Content="Opis produkta" HorizontalAlignment="Left" Margin="57,134,0,0" VerticalAlignment="Top"/>
 
     </Grid>
