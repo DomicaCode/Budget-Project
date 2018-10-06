@@ -13,27 +13,14 @@ namespace Project_Budget.Engine
     public class DataAccess
     {
 
-        public void addItems(string item_name, float item_price)
+        public void addItems(string item_name, float item_price, string item_desc)
         {
             using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
             {
-
-
                 List<Item> items = new List<Item>();
-
-                items.Add(new Item { itm_name = item_name, itm_price = item_price });
-
-                connection.Execute("ItemsAdd", items, commandType: CommandType.StoredProcedure);
-
-
-                /* Laksi nacin
-                var i = new DynamicParameters();
-
-                i.Add("_itm_name", item_name);
-                i.Add("_itm_price", item_price);
-
-                var output = connection.Execute("ItemsAdd", i, commandType: CommandType.StoredProcedure);
-                */
+                items.Add(new Item { itm_name = item_name, itm_price = item_price, itm_desc = item_desc });
+                connection.Execute("ItemsAdd", items,
+                    commandType: CommandType.StoredProcedure);
 
             }
         }
@@ -42,11 +29,23 @@ namespace Project_Budget.Engine
         {
             using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
             {
-                connection.Open();
                 var i = new DynamicParameters();
                 i.Add("_itm_name", item_name);
 
-                return connection.Query<Item>($"ItemsSearch", i, commandType: CommandType.StoredProcedure).ToList();
+                return connection.Query<Item>("ItemsSearch", i,
+                    commandType: CommandType.StoredProcedure
+                    ).ToList();
+            }
+        }
+
+        public List<Trgovina> getAllStores()
+        {
+            using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
+            {
+                return connection.Query<Trgovina>("TrgovineViewAll", null,
+                    commandType: CommandType.StoredProcedure
+                    ).ToList();
+
             }
         }
         

@@ -5,17 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Budget"
         mc:Ignorable="d"
-        Title="Item Managment" Height="350" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="Item Managment" Height="350" Width="250" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
-        <Button x:Name="btnAddItems" Content="Dodaj" HorizontalAlignment="Left" Margin="283,266,0,0" VerticalAlignment="Top" Width="75" Click="btnAddItems_Click"/>
-        <TextBox x:Name="txtboxItemName" HorizontalAlignment="Left" Height="23" Margin="264,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblitemName" Content="Ime produkta" HorizontalAlignment="Left" Margin="264,163,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtboxItemPrice" HorizontalAlignment="Left" Height="23" Margin="264,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblitemPrice" Content="Cijena produkta" HorizontalAlignment="Left" Margin="264,212,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtboxItemNameSearch" HorizontalAlignment="Left" Height="23" Margin="264,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblitemNameSearch" Content="Ime produkta" HorizontalAlignment="Left" Margin="264,26,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSearchItemByName" Content="Trazi" HorizontalAlignment="Left" Margin="283,80,0,0" VerticalAlignment="Top" Width="75" Click="btnSearchItemByName_Click"/>
-        <DataGrid x:Name="datagridItems" HorizontalAlignment="Left" Height="260" Margin="10,26,0,0" VerticalAlignment="Top" Width="239"/>
+        <Button x:Name="btnAddItems" Content="Dodaj" HorizontalAlignment="Left" Margin="76,205,0,0" VerticalAlignment="Top" Width="75" Click="btnAddItems_Click"/>
+        <TextBox x:Name="txtboxItemName" HorizontalAlignment="Left" Height="23" Margin="57,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblitemName" Content="Ime produkta" HorizontalAlignment="Left" Margin="57,31,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxItemPrice" HorizontalAlignment="Left" Height="23" Margin="57,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblitemPrice" Content="Cijena produkta" HorizontalAlignment="Left" Margin="57,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtboxItemDesc" HorizontalAlignment="Left" Height="23" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224"/>
+        <Label x:Name="lblitemDesc" Content="Opis produkta" HorizontalAlignment="Left" Margin="57,134,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

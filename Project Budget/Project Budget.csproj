@@ -87,6 +87,7 @@
     <Compile Include="Engine\DataAccess.cs" />
     <Compile Include="Engine\Helper.cs" />
     <Compile Include="Engine\Item.cs" />
+    <Compile Include="Engine\Trgovina.cs" />
     <Compile Include="Items.xaml.cs">
       <DependentUpon>Items.xaml</DependentUpon>
     </Compile>

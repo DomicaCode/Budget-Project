@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Budget"
         mc:Ignorable="d"
-        Title="Budget Engine v0.1" Height="500" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" FontFamily="SimSun">
+        Title="Budget Engine v0.1" Height="500" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="btnItems" Content="Lupi" HorizontalAlignment="Left" Margin="330,420,0,0" VerticalAlignment="Top" Width="74" Click="btnItems_Click"/>
+        <Button x:Name="btnItems" Content="Dodaj item" HorizontalAlignment="Left" Margin="480,426,0,0" VerticalAlignment="Top" Width="74" Click="btnItems_Click"/>
+        <DataGrid x:Name="datagridItems" HorizontalAlignment="Left" Height="388" Margin="10,27,0,0" VerticalAlignment="Top" Width="421"/>
+        <TextBox x:Name="txtboxItemNameSearch" HorizontalAlignment="Left" Height="23" Margin="460,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblitemNameSearch" Content="Ime produkta" HorizontalAlignment="Left" Margin="460,35,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSearchItemByName" Content="Trazi" HorizontalAlignment="Left" Margin="480,87,0,0" VerticalAlignment="Top" Width="75" Click="btnSearchItemByName_Click"/>
+        <ComboBox x:Name="comboxStoreNames" HorizontalAlignment="Left" Margin="460,146,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblstoreName" Content="Ime trgovine" HorizontalAlignment="Left" Margin="460,115,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

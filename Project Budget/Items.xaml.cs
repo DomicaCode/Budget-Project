@@ -32,27 +32,11 @@ namespace Project_Budget
 
         private void btnAddItems_Click(object sender, RoutedEventArgs e)
         {
-            da.addItems(txtboxItemName.Text.Trim(), float.Parse(txtboxItemPrice.Text));
+            da.addItems(txtboxItemName.Text.Trim(), float.Parse(txtboxItemPrice.Text), txtboxItemDesc.Text.Trim());
 
             txtboxItemName.Text = "";
             txtboxItemPrice.Text = "";
         }
 
-        private void btnSearchItemByName_Click(object sender, RoutedEventArgs e)
-        {
-            List<Item> items = new List<Item>();
-            items = da.getItems(txtboxItemNameSearch.Text.Trim());
-
-            this.datagridItems.ItemsSource = items;
-
-            txtboxItemNameSearch.Text = "";
-        }
-
-        public void fillData(int sqlOutput)
-        {
-            DataTable da = new DataTable();
-
-
-        }
     }
 }
