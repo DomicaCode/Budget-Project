@@ -1,12 +1,13 @@
-﻿<Window x:Class="Project_Budget.MainWindow"
+﻿<Window x:Name="mainWindow" x:Class="Project_Budget.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Budget"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Budget Engine v0.1" Height="500" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" FontFamily="SimSun">
     <Grid>
-        
+        <Button x:Name="btnItems" Content="Lupi" HorizontalAlignment="Left" Margin="330,420,0,0" VerticalAlignment="Top" Width="74" Click="btnItems_Click"/>
+
     </Grid>
 </Window>

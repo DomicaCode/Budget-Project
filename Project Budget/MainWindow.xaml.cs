@@ -20,9 +20,17 @@ namespace Project_Budget
     /// </summary>
     public partial class MainWindow : Window
     {
+        Items items = new Items();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnItems_Click(object sender, RoutedEventArgs e)
+        {
+            items.Owner = this;
+            items.ShowDialog();
         }
     }
 }
