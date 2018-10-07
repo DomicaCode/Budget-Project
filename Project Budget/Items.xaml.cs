@@ -32,13 +32,22 @@ namespace Project_Budget
 
         private void btnAddItems_Click(object sender, RoutedEventArgs e)
         {
-            da.addItems(txtboxItemName.Text.Trim(), float.Parse(txtboxItemPrice.Text), txtboxItemDesc.Text.Trim());
+            try
+            {
+                da.addItems(txtboxItemName.Text.Trim(), float.Parse(txtboxItemPrice.Text), txtboxItemDesc.Text.Trim());
 
-            txtboxItemName.Text = "";
-            txtboxItemPrice.Text = "";
-            txtboxItemDesc.Text = "";
+                txtboxItemName.Text = "";
+                txtboxItemPrice.Text = "";
+                txtboxItemDesc.Text = "";
 
-            MessageBox.Show("Item uspjesno dodan!");
+                MessageBox.Show("Item spjesno dodan!");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Moras popuniti sve!", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+
         }
 
     }

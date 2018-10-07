@@ -24,11 +24,14 @@ namespace Project_Budget
         Items items = new Items();
         Trgovina stores = new Trgovina();
         DataAccess da = new DataAccess();
+
         public string date;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            var NOVAVARIJABLA = da.getAllStores();
 
             // popuni combobox za trgovine
             List<Trgovina> stores = new List<Trgovina>();
@@ -61,14 +64,25 @@ namespace Project_Budget
 
         private void btnShoppingAdd_Click(object sender, RoutedEventArgs e)
         {
-            checkDate();
-            da.addShop(txtboxShoppingName.Text.Trim(),
-                (int)datagridItems.SelectedValue, (int)comboxStoreNames.SelectedValue,
-                Convert.ToInt32(txtboxShoppingQuantity.Text.Trim()), comboxShoppingPaymentType.SelectedItem.ToString(), date);
 
-            txtboxShoppingQuantity.Text = "";
+            try
+            {
+                checkDate();
+                da.addShop(txtboxShoppingName.Text.Trim(),
+                     (int)datagridItems.SelectedValue, (int)comboxStoreNames.SelectedValue,
+                        Convert.ToInt32(txtboxShoppingQuantity.Text.Trim()), 
+                            comboxShoppingPaymentType.SelectedItem.ToString(), date);
 
-            MessageBox.Show("Shopping uspjesno dodan!");
+                txtboxShoppingQuantity.Text = "";
+
+                MessageBox.Show("Shopping uspjesno dodan!");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Moras popuniti sve!", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+
         }
 
         public void checkDate()
@@ -80,8 +94,15 @@ namespace Project_Budget
             }
             else
             {
-
+               // MessageBox.Show("Nisi datum upisao!", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void btnShoppingWindow_Click(object sender, RoutedEventArgs e)
+        {
+            ShopWindow shop = new ShopWindow();
+            shop.Owner = this;
+            shop.ShowDialog();
         }
     }
 }

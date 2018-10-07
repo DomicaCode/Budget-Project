@@ -18,7 +18,8 @@ namespace Project_Budget.Engine
             using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
             {
                 List<Item> items = new List<Item>();
-                items.Add(new Item { itm_name = item_name, itm_price = item_price, itm_desc = item_desc });
+                items.Add(new Item { itm_name = item_name, itm_price = item_price,
+                                        itm_desc = item_desc });
                 connection.Execute("ItemsAdd", items,
                     commandType: CommandType.StoredProcedure);
 
@@ -57,6 +58,26 @@ namespace Project_Budget.Engine
                 shoppings.Add(new Shopping { sop_name = sop_name, itm_id = item_id, trg_id = trg_id, item_quantity = item_quantity, payment_type = payment_type, datum = date });
                 connection.Execute("SopingInsert", shoppings, 
                     commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public List<Shopping> getShopping(string shop_name, string date)
+        {
+            using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
+            {
+                var p = new DynamicParameters();
+                p.Add("_sop_name", shop_name);
+                p.Add("_datum", date);
+
+                return connection.Query<Shopping>("SopingSearch", p, commandType: CommandType.StoredProcedure).ToList();
+            }
+        }
+
+        public List<Shopping> getAllShoppings()
+        {
+            using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
+            {
+                return connection.Query<Shopping>("SELECT * FROM soping").ToList();
             }
         }
     }
