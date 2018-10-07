@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Project_Budget.Engine;
+using Project_Budget.Factories;
 
 namespace Project_Budget
 {
@@ -20,7 +21,6 @@ namespace Project_Budget
     /// </summary>
     public partial class ShopWindow : Window
     {
-        DataAccess da = new DataAccess();
         private string date;
 
         public ShopWindow()
@@ -32,7 +32,7 @@ namespace Project_Budget
         {
             checkDate();
             List<Shopping> shoppings = new List<Shopping>();
-            shoppings = da.getShopping(txtboxShoppingName.Text.Trim(), date);
+            shoppings = ShoppingFactory.getShopping(txtboxShoppingName.Text.Trim(), date);
             datagridShoppings.ItemsSource = shoppings;
         }
 
@@ -52,7 +52,7 @@ namespace Project_Budget
         private void btnListAllShopping_Click(object sender, RoutedEventArgs e)
         {
             List<Shopping> shoppings = new List<Shopping>();
-            shoppings = da.getAllShoppings();
+            shoppings = ShoppingFactory.getAllShoppings();
             datagridShoppings.ItemsSource = shoppings;
         }
     }

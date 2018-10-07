@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Project_Budget.Engine;
+using Project_Budget.Factories;
 
 namespace Project_Budget
 {
@@ -23,7 +24,6 @@ namespace Project_Budget
     {
         Items items = new Items();
         Trgovina stores = new Trgovina();
-        DataAccess da = new DataAccess();
 
         public string date;
 
@@ -31,11 +31,9 @@ namespace Project_Budget
         {
             InitializeComponent();
 
-            var NOVAVARIJABLA = da.getAllStores();
-
             // popuni combobox za trgovine
             List<Trgovina> stores = new List<Trgovina>();
-            stores = da.getAllStores();
+            stores = StoreFactory.getAllStores();
             comboxStoreNames.ItemsSource = stores;
             comboxStoreNames.DisplayMemberPath = "ime_trg";
             comboxStoreNames.SelectedValuePath = "id";
@@ -54,7 +52,7 @@ namespace Project_Budget
         private void btnSearchItemByName_Click(object sender, RoutedEventArgs e)
         {
             List<Item> items = new List<Item>();
-            items = da.getItems(txtboxItemNameSearch.Text.Trim());
+            items = ItemFactory.getItems(txtboxItemNameSearch.Text.Trim());
 
             this.datagridItems.ItemsSource = items;
             this.datagridItems.SelectedValuePath = "itm_id";
@@ -68,7 +66,7 @@ namespace Project_Budget
             try
             {
                 checkDate();
-                da.addShop(txtboxShoppingName.Text.Trim(),
+                ShoppingFactory.addShopping(txtboxShoppingName.Text.Trim(),
                      (int)datagridItems.SelectedValue, (int)comboxStoreNames.SelectedValue,
                         Convert.ToInt32(txtboxShoppingQuantity.Text.Trim()), 
                             comboxShoppingPaymentType.SelectedItem.ToString(), date);

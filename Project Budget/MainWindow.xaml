@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Budget"
         mc:Ignorable="d"
-        Title="Budget Engine v0.2" Height="500" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Budget Engine v0.22" Height="500" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="btnItems" Content="Dodaj item" HorizontalAlignment="Left" Margin="475,426,0,0" VerticalAlignment="Top" Width="74" Click="btnItems_Click"/>
         <DataGrid x:Name="datagridItems" HorizontalAlignment="Left" Height="388" Margin="10,27,0,0" VerticalAlignment="Top" Width="421"/>

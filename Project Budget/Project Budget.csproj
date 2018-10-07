@@ -72,6 +72,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Factories\ItemFactory.cs" />
+    <Compile Include="Factories\ShoppingFactory.cs" />
+    <Compile Include="Factories\StoreFactory.cs" />
     <Compile Include="ShopWindow.xaml.cs">
       <DependentUpon>ShopWindow.xaml</DependentUpon>
     </Compile>
@@ -87,11 +90,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Engine\DataAccess.cs" />
     <Compile Include="Engine\Helper.cs" />
-    <Compile Include="Engine\Item.cs" />
-    <Compile Include="Engine\Shopping.cs" />
-    <Compile Include="Engine\Trgovina.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Shopping.cs" />
+    <Compile Include="Models\Trgovina.cs" />
     <Compile Include="Items.xaml.cs">
       <DependentUpon>Items.xaml</DependentUpon>
     </Compile>

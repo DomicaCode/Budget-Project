@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using Project_Budget.Engine;
+using Project_Budget.Factories;
 using Dapper;
 
 namespace Project_Budget
@@ -23,7 +24,6 @@ namespace Project_Budget
     /// </summary>
     public partial class Items : Window
     {
-        DataAccess da = new DataAccess();
 
         public Items()
         {
@@ -34,7 +34,7 @@ namespace Project_Budget
         {
             try
             {
-                da.addItems(txtboxItemName.Text.Trim(), float.Parse(txtboxItemPrice.Text), txtboxItemDesc.Text.Trim());
+                ItemFactory.addItems(txtboxItemName.Text.Trim(), float.Parse(txtboxItemPrice.Text), txtboxItemDesc.Text.Trim());
 
                 txtboxItemName.Text = "";
                 txtboxItemPrice.Text = "";
