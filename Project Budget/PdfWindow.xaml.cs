@@ -42,13 +42,11 @@ namespace Project_Budget
             if (txtboxItemSearch.Text != "")
             {
                 List<Item> i = ItemFactory.getItems(txtboxItemSearch.Text.Trim());
-                items.AddRange(i);
-                datagridItems.ItemsSource = items;
+                datagridItems.ItemsSource = i;
                 datagridItems.SelectedValuePath = "itm_id";
-                datagridItems.DataContext = items;
-
 
                 txtboxItemSearch.Text = "";
+                datagridItems.Items.Refresh();
             }
             else
             {
@@ -57,6 +55,10 @@ namespace Project_Budget
 
         }
 
+        private void addItems(List<Item> i)
+        {
+            items.AddRange(i);
+        }
 
         private void btnGetPdf_Click(object sender, RoutedEventArgs e)
         {
@@ -65,9 +67,14 @@ namespace Project_Budget
             this.Close();
         }
 
-        private void btnDeleteItem_Click(object sender, RoutedEventArgs e)
+        private void btnAddItems_Click(object sender, RoutedEventArgs e)
         {
+            List<Item> SelectedItemsList = datagridItems.SelectedItems.Cast<Item>().ToList();
+            SelectedItemsList.ToList();
+            List<Item> i = SelectedItemsList;
+            addItems(i);
 
+            MessageBox.Show("Dodao si item!");
         }
     }
 }

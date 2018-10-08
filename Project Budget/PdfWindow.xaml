@@ -8,10 +8,10 @@
         Title="PDF Manager" Height="400" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
         <DataGrid x:Name="datagridItems" HorizontalAlignment="Left" Height="270" Margin="10,10,0,0" VerticalAlignment="Top" Width="402"/>
-        <Button x:Name="btnGetItems" Content="Add" HorizontalAlignment="Left" Margin="155,297,0,0" VerticalAlignment="Top" Width="68" Click="btnGetItems_Click"/>
+        <Button x:Name="btnGetItems" Content="Trazi" HorizontalAlignment="Left" Margin="155,297,0,0" VerticalAlignment="Top" Width="68" Click="btnGetItems_Click"/>
         <Button x:Name="btnGetPdf" Content="Get pdf" HorizontalAlignment="Left" Margin="344,297,0,0" VerticalAlignment="Top" Width="68" Click="btnGetPdf_Click"/>
         <TextBox x:Name="txtboxItemSearch" HorizontalAlignment="Left" Height="23" Margin="10,294,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnDeleteItem" Content="Delete" HorizontalAlignment="Left" Margin="234,297,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteItem_Click"/>
+        <Button x:Name="btnAddItems" Content="Dodaj" HorizontalAlignment="Left" Margin="155,327,0,0" VerticalAlignment="Top" Width="68" Click="btnAddItems_Click"/>
 
     </Grid>
 </Window>

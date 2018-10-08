@@ -75,13 +75,14 @@ namespace Project_Budget
                 txtboxShoppingQuantity.Text = "";
 
                 MessageBox.Show("Shopping uspjesno dodan!");
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show("Moras popuniti sve!", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
             }
-
+            datagridItems.ItemsSource = null;
         }
 
         public void checkDate()

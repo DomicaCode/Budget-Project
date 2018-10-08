@@ -33,7 +33,7 @@ namespace Project_Budget
         {
             checkDate();
             List<ShoppingJoin> shoppings = new List<ShoppingJoin>();
-            shoppings = ShoppingFactory.getShopping(txtboxShoppingName.Text.Trim(), date);
+            shoppings = ShoppingFactory.getShopping(date);
             datagridShoppings.ItemsSource = shoppings;
         }
 

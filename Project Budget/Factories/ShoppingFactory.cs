@@ -26,7 +26,7 @@ namespace Project_Budget.Factories
             }
         }
 
-        public static List<ShoppingJoin> getShopping(string shop_name, string date)
+        public static List<ShoppingJoin> getShopping(string date)
         {
             using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
             {

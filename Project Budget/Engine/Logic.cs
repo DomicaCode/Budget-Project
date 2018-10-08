@@ -25,10 +25,19 @@ namespace Project_Budget.Engine
 {
     public class Logic
     {
+
         public static void exportGridPdf(DataTable dt)
-        {
+        {            // definiraj trenutno vrijeme
+            var time = DateTime.Now;
+
+            //uzmi lokaciju documentsa, napravi folder
+            var docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var path = docPath + @"\\.domica\\Shopping List " + time.ToString("dd/MM/yyyy H-mm-ss") + ".pdf";
+            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));
+
+            //napravi pdf file
             Document document = new Document();
-            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream("D://shoppinglist.pdf", FileMode.Create));
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
             document.Open();
 
             Font font = FontFactory.GetFont(FontFactory.TIMES_ROMAN, 14);
