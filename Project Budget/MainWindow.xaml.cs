@@ -22,7 +22,7 @@ namespace Project_Budget
     /// </summary>
     public partial class MainWindow : Window
     {
-        Items items = new Items();
+
         Trgovina stores = new Trgovina();
 
         public string date;
@@ -45,6 +45,7 @@ namespace Project_Budget
 
         private void btnItems_Click(object sender, RoutedEventArgs e)
         {
+            Items items = new Items();
             items.Owner = this;
             items.ShowDialog();
         }
@@ -101,6 +102,13 @@ namespace Project_Budget
             ShopWindow shop = new ShopWindow();
             shop.Owner = this;
             shop.ShowDialog();
+        }
+
+        private void btnPdfWindow_Click(object sender, RoutedEventArgs e)
+        {
+            PdfWindow pdf = new PdfWindow();
+            pdf.Owner = this;
+            pdf.ShowDialog();
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿<Window x:Class="Project_Budget.PdfWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Budget"
+        mc:Ignorable="d"
+        Title="PDF Manager" Height="400" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <DataGrid x:Name="datagridItems" HorizontalAlignment="Left" Height="270" Margin="10,10,0,0" VerticalAlignment="Top" Width="402"/>
+        <Button x:Name="btnGetItems" Content="Add" HorizontalAlignment="Left" Margin="155,297,0,0" VerticalAlignment="Top" Width="68" Click="btnGetItems_Click"/>
+        <Button x:Name="btnGetPdf" Content="Get pdf" HorizontalAlignment="Left" Margin="344,297,0,0" VerticalAlignment="Top" Width="68" Click="btnGetPdf_Click"/>
+        <TextBox x:Name="txtboxItemSearch" HorizontalAlignment="Left" Height="23" Margin="10,294,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnDeleteItem" Content="Delete" HorizontalAlignment="Left" Margin="234,297,0,0" VerticalAlignment="Top" Width="75" Click="btnDeleteItem_Click"/>
+
+    </Grid>
+</Window>

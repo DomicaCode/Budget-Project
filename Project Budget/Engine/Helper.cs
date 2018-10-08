@@ -13,5 +13,6 @@ namespace Project_Budget.Engine
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
+        
     }
 }

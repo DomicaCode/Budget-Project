@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Project_Budget.Models;
 
 namespace Project_Budget.Factories
 {
@@ -25,15 +26,14 @@ namespace Project_Budget.Factories
             }
         }
 
-        public static List<Shopping> getShopping(string shop_name, string date)
+        public static List<ShoppingJoin> getShopping(string shop_name, string date)
         {
             using (IDbConnection connection = new MySqlConnection(Helper.CnnVal("dbConn")))
             {
                 var p = new DynamicParameters();
-                p.Add("_sop_name", shop_name);
                 p.Add("_datum", date);
 
-                return connection.Query<Shopping>("SopingSearch", p, commandType: CommandType.StoredProcedure).ToList();
+                return connection.Query<ShoppingJoin>("SopingSearch", p, commandType: CommandType.StoredProcedure).ToList();
             }
         }
 

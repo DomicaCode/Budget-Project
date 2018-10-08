@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Budget"
         mc:Ignorable="d"
-        Title="Shopping Manager" Height="450" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="Shopping Manager" Height="450" Width="550" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
-        <DataGrid x:Name="datagridShoppings" HorizontalAlignment="Left" Height="319" Margin="10,10,0,0" VerticalAlignment="Top" Width="351"/>
-        <TextBox x:Name="txtboxShoppingName" HorizontalAlignment="Left" Height="23" Margin="366,40,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="112"/>
-        <Label x:Name="lblShoppingName" Content="Ime shoppinga" HorizontalAlignment="Left" Margin="380,9,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="datePickerShopping" HorizontalAlignment="Left" Margin="376,92,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSearchShopping" Content="Trazi" HorizontalAlignment="Left" Margin="380,139,0,0" VerticalAlignment="Top" Width="75" Click="btnSearchShopping_Click"/>
-        <Button x:Name="btnListAllShopping" Content="List all" HorizontalAlignment="Left" Margin="380,181,0,0" VerticalAlignment="Top" Width="75" Click="btnListAllShopping_Click"/>
+        <DataGrid x:Name="datagridShoppings" HorizontalAlignment="Left" Height="319" Margin="10,10,0,0" VerticalAlignment="Top" Width="524"/>
+        <TextBox x:Name="txtboxShoppingName" HorizontalAlignment="Left" Height="23" Margin="15,372,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblShoppingName" Content="Ime shoppinga" HorizontalAlignment="Left" Margin="24,341,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePickerShopping" HorizontalAlignment="Left" Margin="149,372,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSearchShopping" Content="Trazi" HorizontalAlignment="Left" Margin="269,372,0,0" VerticalAlignment="Top" Width="75" Click="btnSearchShopping_Click" Height="23"/>
+        <Button x:Name="btnListAllShopping" Content="List all" HorizontalAlignment="Left" Margin="449,372,0,0" VerticalAlignment="Top" Width="75" Click="btnListAllShopping_Click" Height="23"/>
         <Label x:Name="lblBudget" Content="" HorizontalAlignment="Left" Margin="163,346,0,0" VerticalAlignment="Top"/>
 
     </Grid>

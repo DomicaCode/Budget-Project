@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Project_Budget.Engine;
 using Project_Budget.Factories;
+using Project_Budget.Models;
 
 namespace Project_Budget
 {
@@ -31,7 +32,7 @@ namespace Project_Budget
         private void btnSearchShopping_Click(object sender, RoutedEventArgs e)
         {
             checkDate();
-            List<Shopping> shoppings = new List<Shopping>();
+            List<ShoppingJoin> shoppings = new List<ShoppingJoin>();
             shoppings = ShoppingFactory.getShopping(txtboxShoppingName.Text.Trim(), date);
             datagridShoppings.ItemsSource = shoppings;
         }

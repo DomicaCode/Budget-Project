@@ -40,7 +40,7 @@ namespace Project_Budget
                 txtboxItemPrice.Text = "";
                 txtboxItemDesc.Text = "";
 
-                MessageBox.Show("Item spjesno dodan!");
+                MessageBox.Show("Item uspjesno dodan!");
             }
             catch (Exception ex)
             {
